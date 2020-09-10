@@ -1,0 +1,71 @@
+{
+  "name": "adrhumphreys-datafield",
+  "description": "It is a data field",
+  "main": "./client/src/boot/index.js",
+  "author": "Adrian",
+  "engines": {
+    "node": ">=10.x"
+  },
+  "scripts": {
+    "build": "yarn && NODE_ENV=production webpack -p --bail --progress",
+    "dev": "NODE_ENV=development webpack --progress",
+    "watch": "NODE_ENV=development webpack --watch --progress"
+  },
+  "dependencies": {
+    "babel-polyfill": "6.7.4",
+    "immutability-helper": "^3.1.1",
+    "prettier": "^2.1.1",
+    "react": "^16.8.3",
+    "react-dnd": "^11.1.3",
+    "react-dnd-html5-backend": "^11.1.3",
+    "react-table": "^7.5.0",
+    "reactstrap": "^8.5.1"
+  },
+  "devDependencies": {
+    "@silverstripe/eslint-config": "^0.0.5",
+    "@silverstripe/webpack-config": "^1.0.0",
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "jest-cli": "^23.6.0"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "client/src"
+    ],
+    "modulePaths": [
+      "client/src",
+      "../admin/client/src",
+      "../admin/node_modules",
+      "../silverstripe/admin/client/src",
+      "../silverstripe/admin/node_modules",
+      "../../silverstripe/admin/client/src",
+      "../../silverstripe/admin/node_modules"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/boot/**",
+      "!**/bundles/**",
+      "!**/legacy/**",
+      "!**/vendor/**",
+      "!**/*-test.{js,jsx}",
+      "!**/*-story.{js,jsx}"
+    ],
+    "testMatch": [
+      "**/tests/**/*-test.js?(x)"
+    ],
+    "transform": {
+      ".*": "babel-jest"
+    }
+  }
+}

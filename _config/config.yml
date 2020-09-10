@@ -1,0 +1,8 @@
+---
+Name: datafield
+---
+SilverStripe\Admin\LeftAndMain:
+  extra_requirements_javascript:
+    - 'adrhumphreys/datafield:client/dist/js/bundle.js'
+  extra_requirements_css:
+    - 'adrhumphreys/datafield: client/dist/styles/bundle.css'
